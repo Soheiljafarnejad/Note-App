@@ -7,13 +7,97 @@
     <link rel="stylesheet" href="style.css" />
     <title>Note App js</title>
   </head>
-  <body>
-    <header >
+  <body id="root" class="dark--mode">
+    <header class="container">
       <section class="header">
         <h1 class="header__title">Note App</h1>
-        <img class="header__avatar" src="img/avatar.png" alt="avatar" />
+        <div class="header__profile">
+          <img class="toggler light" src="img/dark-mode.svg" alt="" />
+          <img class="toggler dark" src="img/light-mode.svg" alt="" />
+          <img class="avatar light" src="img/avatar-light.png" alt="avatar" />
+          <img class="avatar dark" src="img/avatar-dark.png" alt="avatar" />
+        </div>
       </section>
     </header>
+
+    <main class="cart--note container">
+      <article class="cart__item" style="background-color: #ffa447">
+        <header class="cart__header">
+          <h2 class="cart__title">title</h2>
+        </header>
+        <div class="cart__body">
+          <p class="cart__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+            voluptatibus modi dolore alias, vitae officia laudantium! Totam.
+          </p>
+        </div>
+        <footer class="cart__footer">
+          <p class="cart__description">today ,12 45</p>
+          <img class="cart__remove light" src="img/trash.svg" alt="trash" />
+          <img class="cart__remove dark" src="img/trash-dark.svg" alt="" />
+        </footer>
+      </article>
+
+      <article class="cart__item" style="background-color: #1eccc3">
+        <header class="cart__header">
+          <h2 class="cart__title">title</h2>
+        </header>
+        <div class="cart__body">
+          <p class="cart__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+            voluptatibus modi dolore alias, vitae officia laudantium! Totam.
+          </p>
+        </div>
+        <footer class="cart__footer">
+          <p class="cart__description">today ,12 45</p>
+          <img class="cart__remove light" src="img/trash.svg" alt="trash" />
+          <img class="cart__remove dark" src="img/trash-dark.svg" alt="" />
+        </footer>
+      </article>
+
+      <article class="cart__item" style="background-color: #ffa6c4">
+        <header class="cart__header">
+          <h2 class="cart__title">title</h2>
+        </header>
+        <div class="cart__body">
+          <p class="cart__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+            voluptatibus modi dolore alias, vitae officia laudantium! Totam.
+          </p>
+        </div>
+        <footer class="cart__footer">
+          <p class="cart__description">today ,12 45</p>
+          <img class="cart__remove light" src="img/trash.svg" alt="trash" />
+          <img class="cart__remove dark" src="img/trash-dark.svg" alt="" />
+        </footer>
+      </article>
+
+      <article class="cart__item" style="background-color: #7ecbff">
+        <header class="cart__header">
+          <h2 class="cart__title">title</h2>
+        </header>
+        <div class="cart__body">
+          <p class="cart__text"></p>
+        </div>
+        <footer class="cart__footer">
+          <p class="cart__description">today ,12 45</p>
+          <img class="cart__remove light" src="img/trash.svg" alt="trash" />
+          <img class="cart__remove dark" src="img/trash-dark.svg" alt="" />
+        </footer>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <img class="add--note light" src="img/add.svg" alt="" />
+      <img class="add--note dark" src="img/add-dark.svg" alt="" />
+      <div class="footer__menu">
+        <img class="pin light" src="img/pin.svg" alt="" />
+        <img class="pin dark" src="img/pin-dark.svg" alt="" />
+        <div class="bar"></div>
+        <img class="search light" src="img/search.svg" alt="" />
+        <img class="search dark" src="img/search-dark.svg" alt="" />
+      </div>
+    </footer>
 
     <script src="App.js" type="module"></script>
   </body>
