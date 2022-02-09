@@ -8,19 +8,28 @@
     <title>Note App js</title>
   </head>
   <body id="root" class="dark--mode">
+
     <header class="container">
       <section class="header">
         <h1 class="header__title">Note App</h1>
         <div class="header__profile">
-          <img class="toggler light" src="img/dark-mode.svg" alt="" />
-          <img class="toggler dark" src="img/light-mode.svg" alt="" />
-          <img class="avatar light" src="img/avatar-light.png" alt="avatar" />
-          <img class="avatar dark" src="img/avatar-dark.png" alt="avatar" />
+          <div class="icons--toggler">
+            <svg class="icon light toggler">
+              <use xlink:href="img/sprite-icon.svg#dark-mode"></use>
+            </svg>
+            <svg class="icon dark toggler">
+              <use xlink:href="img/sprite-icon.svg#light-mode"></use>
+            </svg>
+          </div>
+          <div class="icons--avatar">
+            <img class="avatar dark" src="img/avatar-dark.png" alt="avatar" />
+            <img class="avatar light" src="img/avatar-light.png" alt="avatar" />
+          </div>
         </div>
       </section>
     </header>
 
-    <main class="cart--note container">
+    <main class="cart--items container">
       <article class="cart__item" style="background-color: #ffa447">
         <header class="cart__header">
           <h2 class="cart__title">title</h2>
@@ -33,8 +42,14 @@
         </div>
         <footer class="cart__footer">
           <p class="cart__description">today ,12 45</p>
-          <img class="cart__remove light" src="img/trash.svg" alt="trash" />
-          <img class="cart__remove dark" src="img/trash-dark.svg" alt="" />
+          <div class="icons--remove">
+            <svg class="icon light">
+              <use xlink:href="img/sprite-icon.svg#trash"></use>
+            </svg>
+            <svg class="icon dark">
+              <use xlink:href="img/sprite-icon.svg#trash-dark"></use>
+            </svg>
+          </div>
         </footer>
       </article>
 
@@ -50,8 +65,14 @@
         </div>
         <footer class="cart__footer">
           <p class="cart__description">today ,12 45</p>
-          <img class="cart__remove light" src="img/trash.svg" alt="trash" />
-          <img class="cart__remove dark" src="img/trash-dark.svg" alt="" />
+          <div class="icons--remove">
+            <svg class="icon light">
+              <use xlink:href="img/sprite-icon.svg#trash"></use>
+            </svg>
+            <svg class="icon dark">
+              <use xlink:href="img/sprite-icon.svg#trash-dark"></use>
+            </svg>
+          </div>
         </footer>
       </article>
 
@@ -67,8 +88,14 @@
         </div>
         <footer class="cart__footer">
           <p class="cart__description">today ,12 45</p>
-          <img class="cart__remove light" src="img/trash.svg" alt="trash" />
-          <img class="cart__remove dark" src="img/trash-dark.svg" alt="" />
+          <div class="icons--remove">
+            <svg class="icon light">
+              <use xlink:href="img/sprite-icon.svg#trash"></use>
+            </svg>
+            <svg class="icon dark">
+              <use xlink:href="img/sprite-icon.svg#trash-dark"></use>
+            </svg>
+          </div>
         </footer>
       </article>
 
@@ -81,22 +108,66 @@
         </div>
         <footer class="cart__footer">
           <p class="cart__description">today ,12 45</p>
-          <img class="cart__remove light" src="img/trash.svg" alt="trash" />
-          <img class="cart__remove dark" src="img/trash-dark.svg" alt="" />
+          <div class="icons--remove">
+            <svg class="icon light">
+              <use xlink:href="img/sprite-icon.svg#trash"></use>
+            </svg>
+            <svg class="icon dark">
+              <use xlink:href="img/sprite-icon.svg#trash-dark"></use>
+            </svg>
+          </div>
         </footer>
       </article>
     </main>
 
-    <footer class="footer">
-      <img class="add--note light" src="img/add.svg" alt="" />
-      <img class="add--note dark" src="img/add-dark.svg" alt="" />
-      <div class="footer__menu">
-        <img class="pin light" src="img/pin.svg" alt="" />
-        <img class="pin dark" src="img/pin-dark.svg" alt="" />
-        <div class="bar"></div>
-        <img class="search light" src="img/search.svg" alt="" />
-        <img class="search dark" src="img/search-dark.svg" alt="" />
+    <section class="backdrop">
+        <form class="backdrop__form container">
+          <h2>What should I keep?</h2>
+          <input class="form title" type="text" placeholder="Title...">
+          <textarea class="form text" placeholder="Text..."></textarea>
+          <div class="form__footer">
+            <button type="button" class="btn btn--cancel">Cancel</button>
+            <button type="button" class="btn btn--save">Save</button>
+          </div>
+        </form>
+      <div class="backdrop__color">
+        <div class="color color--orange"></div>
+        <div class="color color--blue"></div>
+        <div class="color color--green"></div>
+        <div class="color color--pink"></div>
       </div>
+    </section>
+
+    <footer class="footer">
+      <div class="icons--add">
+        <svg class=" icon--large light add--note">
+          <use xlink:href="img/sprite-icon.svg#add"></use>
+        </svg>
+        <svg class=" icon--large dark add--note">
+          <use xlink:href="img/sprite-icon.svg#add-dark"></use>
+        </svg>
+      </div>
+
+      <article class="footer__menu">
+        <div class="icons--pin">
+          <svg class="icon light">
+            <use xlink:href="img/sprite-icon.svg#pin"></use>
+          </svg>
+          <svg class="icon dark">
+            <use xlink:href="img/sprite-icon.svg#pin-dark"></use>
+          </svg>
+        </div>
+
+        <div class="bar"></div>
+        <div class="icons--search">
+          <svg class="icon light">
+            <use xlink:href="img/sprite-icon.svg#search"></use>
+          </svg>
+          <svg class="icon dark">
+            <use xlink:href="img/sprite-icon.svg#search-dark"></use>
+          </svg>
+        </div>
+      </article>
     </footer>
 
     <script src="App.js" type="module"></script>
