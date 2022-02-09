@@ -8,7 +8,6 @@
     <title>Note App js</title>
   </head>
   <body id="root" class="dark--mode">
-
     <header class="container">
       <section class="header">
         <h1 class="header__title">Note App</h1>
@@ -121,29 +120,31 @@
     </main>
 
     <section class="backdrop">
-        <form class="backdrop__form container">
-          <h2>What should I keep?</h2>
-          <input class="form title" type="text" placeholder="Title...">
-          <textarea class="form text" placeholder="Text..."></textarea>
-          <div class="form__footer">
-            <button type="button" class="btn btn--cancel">Cancel</button>
-            <button type="button" class="btn btn--save">Save</button>
-          </div>
-        </form>
+      <form class="backdrop__form container">
+        <h2>What should I keep?</h2>
+        <input class="form title" type="text" placeholder="Title..." />
+        <textarea class="form text" placeholder="Text..."></textarea>
+        <div class="form__footer">
+          <button type="button" class="btn btn--cancel">Cancel</button>
+          <button type="button" class="btn btn--save">Save</button>
+        </div>
+      </form>
       <div class="backdrop__color">
-        <div class="color color--orange"></div>
-        <div class="color color--blue"></div>
-        <div class="color color--green"></div>
-        <div class="color color--pink"></div>
+        <div class="colors container">
+          <div class="color color--orange" data-color="orange"></div>
+          <div class="color color--blue" data-color="blue"></div>
+          <div class="color color--green" data-color="green"></div>
+          <div class="color color--pink" data-color="pink"></div>
+        </div>
       </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer container">
       <div class="icons--add">
-        <svg class=" icon--large light add--note">
+        <svg class="icon--large light add--note">
           <use xlink:href="img/sprite-icon.svg#add"></use>
         </svg>
-        <svg class=" icon--large dark add--note">
+        <svg class="icon--large dark add--note">
           <use xlink:href="img/sprite-icon.svg#add-dark"></use>
         </svg>
       </div>
