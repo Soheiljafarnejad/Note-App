@@ -12,9 +12,12 @@ const view = new NoteView(root, {
   onSelectColor(color) {
     console.log(color);
   },
-  onNoteSelect(dataId){
+  onNoteSelect(dataId) {
     console.log(dataId);
-  }
+  },
+  onNoteDelete(id) {
+    console.log(id);
+  },
 });
 
 view.updateNoteList(NoteApi.getNoteLocal());

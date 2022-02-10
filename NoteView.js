@@ -1,11 +1,13 @@
 class NoteView {
   constructor(root, handler) {
     this.root = root;
-    const { onAddNote, onSaveNote, onSelectColor, onNoteSelect } = handler;
+    const { onAddNote, onSaveNote, onSelectColor, onNoteSelect, onNoteDelete } =
+      handler;
     this.onAddNote = onAddNote;
     this.onSaveNote = onSaveNote;
     this.onSelectColor = onSelectColor;
     this.onNoteSelect = onNoteSelect;
+    this.onNoteDelete = onNoteDelete;
 
     root.innerHTML = `
     <header class="container">
@@ -147,7 +149,7 @@ class NoteView {
       </div>
       <footer class="cart__footer">
         <p class="cart__description">${_Date}</p>
-        <div class="icons--remove">
+        <div class="icons--remove" data-id="${id}">
           <svg class="icon light">
             <use xlink:href="img/sprite-icon.svg#trash"></use>
           </svg>
@@ -169,11 +171,25 @@ class NoteView {
       result += this._crateHtmlNode(title, text, date, color, id);
     });
     noteContainer.innerHTML = result;
+
     this.root.querySelectorAll(".cart__item").forEach((item) => {
       item.addEventListener("click", () => {
         this.onNoteSelect(item.dataset.id);
       });
     });
+
+    this.root.querySelectorAll(".icons--remove").forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.onNoteDelete(item.dataset.id);
+      });
+    });
+  }
+
+  updateSelectNote(note) {
+    this.root.querySelector(".title").value = note.title;
+    this.root.querySelector(".text").value = note.text;
+    this.root.querySelector(".backdrop").style.display = "flex";
   }
 }
 
