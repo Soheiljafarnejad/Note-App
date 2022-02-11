@@ -131,7 +131,12 @@ class NoteView {
     // darkMode
     darkMode.forEach((item) => {
       item.addEventListener("click", () => {
-        this.root.classList.toggle("dark--mode");
+        root.classList.toggle("dark--mode");
+        if (root.classList.contains("dark--mode")) {
+          localStorage.setItem("darkMode", "true");
+        } else {
+          localStorage.setItem("darkMode", "false");
+        }
       });
     });
 
@@ -152,13 +157,12 @@ class NoteView {
       // select color
       else if (classItem.contains("color")) {
         // show color selected
-        this.root.querySelectorAll(".color").forEach((item)=>{
-          item.classList.remove("color__select")
-        })
+        this.root.querySelectorAll(".color").forEach((item) => {
+          item.classList.remove("color__select");
+        });
         e.target.classList.add("color__select");
         // select color note
         this.onSelectColor(e.target.dataset.color);
-
       }
     });
 

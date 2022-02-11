@@ -6,6 +6,7 @@ class Handler {
     this.note = [];
     this.view = new NoteView(root, this._Application());
     this._refreshNote();
+    this.darkMode(root)
   }
 
   _refreshNote() {
@@ -48,6 +49,14 @@ class Handler {
         this._refreshNote();
       },
     };
+  }
+
+  darkMode(root) {
+    if (localStorage.getItem("darkMode") == "true") {
+      root.classList.add("dark--mode");
+    } else {
+      root.classList.remove("dark--mode");
+    }
   }
 }
 
