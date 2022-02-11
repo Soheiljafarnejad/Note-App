@@ -44,14 +44,51 @@ class NoteView {
           <button type="button" class="btn btn--save">Save</button>
         </div>
       </form>
+
       <div class="backdrop__color">
-        <div class="colors container">
-          <div class="color color--orange" data-color="orange"></div>
-          <div class="color color--blue" data-color="blue"></div>
-          <div class="color color--green" data-color="green"></div>
-          <div class="color color--pink" data-color="pink"></div>
+      <div class="colors container">
+        <div class="color color--blue" data-color="blue">
+          <div class="icons--check">
+          <svg class="icon--check dark">
+          <use xlink:href="img/sprite-icon.svg#check"></use>
+        </svg>
+            <svg class="icon--check light">
+              <use xlink:href="img/sprite-icon.svg#check -light"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="color color--orange" data-color="orange">
+          <div class="icons--check">
+            <svg class="icon--check light">
+              <use xlink:href="img/sprite-icon.svg#check -light"></use>
+            </svg>
+            <svg class="icon--check dark">
+              <use xlink:href="img/sprite-icon.svg#check"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="color color--green" data-color="green">
+          <div class="icons--check">
+            <svg class="icon--check light">
+              <use xlink:href="img/sprite-icon.svg#check -light"></use>
+            </svg>
+            <svg class="icon--check dark">
+              <use xlink:href="img/sprite-icon.svg#check"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="color color--pink" data-color="pink">
+          <div class="icons--check">
+            <svg class="icon--check light">
+              <use xlink:href="img/sprite-icon.svg#check -light"></use>
+            </svg>
+            <svg class="icon--check dark">
+              <use xlink:href="img/sprite-icon.svg#check"></use>
+            </svg>
+          </div>
         </div>
       </div>
+    </div>
     </section>
 
     <footer class="footer container">
@@ -65,22 +102,22 @@ class NoteView {
       </div>
 
       <article class="footer__menu">
-        <div class="icons--pin">
+        <div class="icons--menu">
           <svg class="icon light">
-            <use xlink:href="img/sprite-icon.svg#pin"></use>
+            <use xlink:href="img/sprite-icon.svg#menu-dark"></use>
           </svg>
           <svg class="icon dark">
-            <use xlink:href="img/sprite-icon.svg#pin-dark"></use>
+            <use xlink:href="img/sprite-icon.svg#menu-light"></use>
           </svg>
         </div>
 
-        <div class="bar"></div>
-        <div class="icons--search">
+        <div class="footer__bar"></div>
+        <div class="icons--bell">
           <svg class="icon light">
-            <use xlink:href="img/sprite-icon.svg#search"></use>
+            <use xlink:href="img/sprite-icon.svg#bell-dark"></use>
           </svg>
           <svg class="icon dark">
-            <use xlink:href="img/sprite-icon.svg#search-dark"></use>
+            <use xlink:href="img/sprite-icon.svg#bell-light"></use>
           </svg>
         </div>
       </article>
@@ -102,7 +139,7 @@ class NoteView {
       const classItem = e.target.classList;
 
       // edit and save Note
-       if (classItem.contains("btn--save")) {
+      if (classItem.contains("btn--save")) {
         const inputTitle = this.root.querySelector(".title").value;
         const inputText = this.root.querySelector(".text").value;
         this.onSaveNote(inputTitle, inputText);
@@ -114,11 +151,18 @@ class NoteView {
       }
       // select color
       else if (classItem.contains("color")) {
+        // show color selected
+        this.root.querySelectorAll(".color").forEach((item)=>{
+          item.classList.remove("color__select")
+        })
+        e.target.classList.add("color__select");
+        // select color note
         this.onSelectColor(e.target.dataset.color);
+
       }
     });
 
-        // add new Note
+    // add new Note
     addBtnNote.forEach((item) => {
       item.addEventListener("click", () => {
         this.onAddNote();
@@ -138,7 +182,7 @@ class NoteView {
     const _Date = temp.join(",");
 
     return `
-      <article class="cart__item color--${color}" data-id="${id}">
+      <article class="cart__item color--${color}" data-id="${id}"  data-color="${color}">
       <header class="cart__header">
         <h2 class="cart__title">${title}</h2>
       </header>
@@ -173,6 +217,10 @@ class NoteView {
     this.root.querySelectorAll(".cart__item").forEach((item) => {
       item.addEventListener("click", () => {
         this.onNoteSelect(item.dataset.id);
+        // show selected color when select note
+        this.root
+          .querySelector(`.color[data-color=${item.dataset.color}]`)
+          .classList.add("color__select");
       });
     });
 
@@ -188,6 +236,11 @@ class NoteView {
     this.root.querySelector(".title").value = note.title;
     this.root.querySelector(".text").value = note.text;
     this.root.querySelector(".backdrop").style.display = "flex";
+
+    // remove Previous Selected color
+    this.root.querySelectorAll(".color").forEach((item) => {
+      item.classList.remove("color__select");
+    });
   }
 }
 

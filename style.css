@@ -26,7 +26,7 @@ html {
 body,
 input,
 textarea {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Quicksand" , sans-serif;
   background-color: var(--bg-body-light);
   font-size: 1.5rem;
   font-weight: 500;
@@ -75,6 +75,25 @@ h2 {
   cursor: pointer;
 }
 
+.icons--check {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.color__select .icons--check {
+  display: block;
+}
+
+.icon--check {
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
 /* --------header-------- */
 
 .header {
@@ -87,7 +106,7 @@ h2 {
 }
 
 .toggler {
-  margin: 0 2rem;
+  margin: 0 1rem;
   cursor: pointer;
   transition: all 0.2s linear;
 }
@@ -117,7 +136,7 @@ h2 {
 .cart--items {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
   gap: 1rem;
   margin-bottom: 12rem;
 }
@@ -131,7 +150,6 @@ h2 {
   box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
   width: 100%;
   height: 100%;
-  max-width: 350px;
   overflow-x: hidden;
 }
 
@@ -159,6 +177,12 @@ h2 {
   padding: 0.5rem;
 }
 
+@media screen and (min-width: 576px) {
+  .cart--items {
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  }
+}
+
 /* --------footer-------- */
 
 .footer {
@@ -175,14 +199,14 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem;
   background-color: var(--bg-body-light-secondary);
   border-radius: 40px 40px 0 0;
   width: 100%;
   height: 60px;
 }
 
-.bar {
+.footer__bar {
   width: 80%;
   margin: 0 1rem;
   height: 5px;
@@ -195,9 +219,14 @@ h2 {
 .add--note {
   background-color: var(--bg-body-light-secondary);
   border-radius: 50%;
-  padding: 1.2rem;
+  padding: 1.3rem;
   transform: translateY(40px);
   z-index: 10;
+  transition: all 0.2s linear;
+}
+
+.add--note:hover {
+  transform: translateY(40px) scale(1.2);
 }
 
 /* backdrop form */
@@ -345,9 +374,14 @@ body.dark--mode {
 
 .dark--mode .add--note {
   background-color: var(--bg-body-dark-secondary);
+  transform: translateY(30px);
 }
 
-.dark--mode .bar {
+.dark--mode .add--note:hover {
+  transform: translateY(30px) scale(1.2);
+}
+
+.dark--mode .footer__bar {
   background-color: var(--bg-body-light);
 }
 
