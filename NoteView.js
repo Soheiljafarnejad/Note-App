@@ -148,6 +148,7 @@ class NoteView {
         const inputTitle = this.root.querySelector(".title").value;
         const inputText = this.root.querySelector(".text").value;
         this.onSaveNote(inputTitle, inputText);
+        backdrop.style.display = "none";
       }
 
       // close backdrop
