@@ -28,7 +28,7 @@ input,
 textarea {
   font-family: "Quicksand", sans-serif;
   background-color: var(--bg-body-light);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 500;
 }
 
@@ -38,13 +38,13 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {
   body {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
   h1 {
     font-size: 5rem;
