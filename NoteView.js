@@ -90,8 +90,6 @@ class NoteView {
     const darkMode = this.root.querySelectorAll(".toggler");
     const backdrop = this.root.querySelector(".backdrop");
     const addBtnNote = this.root.querySelectorAll(".add--note");
-    const inputTitle = this.root.querySelector(".title");
-    const inputText = this.root.querySelector(".text");
 
     // darkMode
     darkMode.forEach((item) => {
@@ -101,28 +99,28 @@ class NoteView {
     });
 
     backdrop.addEventListener("click", (e) => {
-      const className = e.target.classList;
-      // save Note
-      if (className.contains("btn--save")) {
-        const title = inputTitle.value;
-        const text = inputText.value;
-        this.onSaveNote(title, text);
+      const classItem = e.target.classList;
+
+      // edit and save Note
+       if (classItem.contains("btn--save")) {
+        const inputTitle = this.root.querySelector(".title").value;
+        const inputText = this.root.querySelector(".text").value;
+        this.onSaveNote(inputTitle, inputText);
       }
-      // hidden backdrop
-      else if (className.contains("btn--cancel")) {
+
+      // close backdrop
+      else if (classItem.contains("btn--cancel")) {
         backdrop.style.display = "none";
       }
       // select color
-      else if (className.contains("color")) {
+      else if (classItem.contains("color")) {
         this.onSelectColor(e.target.dataset.color);
       }
     });
 
+        // add new Note
     addBtnNote.forEach((item) => {
       item.addEventListener("click", () => {
-        // show backdrop
-        backdrop.style.display = "flex";
-        // add new Note
         this.onAddNote();
       });
     });
