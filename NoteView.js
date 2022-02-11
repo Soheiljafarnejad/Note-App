@@ -91,7 +91,7 @@ class NoteView {
     </div>
     </section>
 
-    <footer class="footer container">
+    <footer class="footer">
       <div class="icons--add">
         <svg class="icon--large light add--note">
           <use xlink:href="img/sprite-icon.svg#add"></use>
