@@ -22,12 +22,6 @@ class NoteView {
               <use xlink:href="img/sprite-icon.svg#light-mode"></use>
             </svg>
           </div>
-          <div class="icons--avatar">
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/Soheiljafarnejad">
-          <img class="avatar dark" src="img/avatar-dark.png" alt="avatar" />
-          <img class="avatar light" src="img/avatar-light.png" alt="avatar" />
-          </a>
-          </div>
         </div>
       </section>
     </header>
@@ -92,16 +86,15 @@ class NoteView {
     </section>
 
     <footer class="footer">
-      <div class="icons--add">
-        <svg class="icon--large light add--note">
-          <use xlink:href="img/sprite-icon.svg#add"></use>
-        </svg>
-        <svg class="icon--large dark add--note">
-          <use xlink:href="img/sprite-icon.svg#add-dark"></use>
-        </svg>
-      </div>
-
       <article class="footer__menu">
+        <div class="icons--add">
+          <svg class="icon--large light add--note">
+            <use xlink:href="img/sprite-icon.svg#add"></use>
+          </svg>
+          <svg class="icon--large dark add--note">
+            <use xlink:href="img/sprite-icon.svg#add-dark"></use>
+          </svg>
+        </div>
         <div class="icons--menu">
           <svg class="icon light">
             <use xlink:href="img/sprite-icon.svg#menu-dark"></use>
@@ -110,8 +103,7 @@ class NoteView {
             <use xlink:href="img/sprite-icon.svg#menu-light"></use>
           </svg>
         </div>
-
-        <div class="footer__bar"></div>
+        <div class="icons--bar"></div>
         <div class="icons--bell">
           <svg class="icon light">
             <use xlink:href="img/sprite-icon.svg#bell-dark"></use>

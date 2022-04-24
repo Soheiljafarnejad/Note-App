@@ -6,7 +6,7 @@ class Handler {
     this.note = [];
     this.view = new NoteView(root, this._Application());
     this._refreshNote();
-    this.darkMode(root)
+    this.darkMode(root);
   }
 
   _refreshNote() {
@@ -19,10 +19,13 @@ class Handler {
   _Application() {
     return {
       onAddNote: () => {
+        const colors = ["green", "pink", "orange", "blue"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        console.log(randomColor);
         const newNote = {
           title: "Title...",
           text: "Text...",
-          color: "blue",
+          color: randomColor,
         };
         NoteApi.saveNote(newNote);
         this._refreshNote();
