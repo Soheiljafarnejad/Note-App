@@ -29,23 +29,16 @@ class NoteView {
     <main class="cart--items container"></main>
 
     <section class="backdrop">
-      <form class="backdrop__form container">
-        <h2>What should I keep?</h2>
-        <input class="form title" type="text" placeholder="Title..." />
-        <textarea class="form text" placeholder="Text..."></textarea>
-        <div class="form__footer">
-          <button type="button" class="btn btn--cancel">Cancel</button>
-          <button type="button" class="btn btn--save">Save</button>
-        </div>
-      </form>
-
-      <div class="backdrop__color">
-      <div class="colors container">
+    <div class="backdrop__form">
+      <h2>What should I keep?</h2>
+      <input class="form title" type="text" placeholder="Title..." />
+      <textarea class="form text" placeholder="Text..."></textarea>
+      <div class="colors">
         <div class="color color--blue" data-color="blue">
           <div class="icons--check">
-          <svg class="icon--check dark">
-          <use xlink:href="img/sprite-icon.svg#check"></use>
-        </svg>
+            <svg class="icon--check dark">
+              <use xlink:href="img/sprite-icon.svg#check"></use>
+            </svg>
             <svg class="icon--check light">
               <use xlink:href="img/sprite-icon.svg#check -light"></use>
             </svg>
@@ -82,8 +75,13 @@ class NoteView {
           </div>
         </div>
       </div>
+      <div class="form__footer">
+      <button type="button" class="btn btn--cancel">Cancel</button>
+      <button type="button" class="btn btn--save">Save</button>
     </div>
-    </section>
+    </div>
+  </section>
+
 
     <footer class="footer">
       <article class="footer__menu">
